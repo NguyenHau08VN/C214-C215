@@ -1,82 +1,108 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Báo tường Vịnh Hạ Long</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #74ebd5, #ACB6E5);
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<title>VỊNH HẠ LONG</title>
 
-       h1 {
-             margin: 20px auto;
-             color: #9ED3DC;
-            background-color: #FFFBF1;   
-            padding: 15px 30px;          
-            border: 4px solid #ffffff;    
-            border-radius: 15px;         
-            width: fit-content;          
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+<style>
+    body {
+        margin: 0;
+        font-family: Arial;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: white;
+        text-align: center;
+    }
+
+    h1 {
+        margin: 30px;
+        font-size: 42px;
+        background: linear-gradient(90deg, #00dbde, #9ED3DC);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        padding: 30px;
+    }
+
+    .card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        background: rgba(255,255,255,0.05);
+        box-shadow: 0 0 20px rgba(0,0,0,0.4);
+        transition: 0.4s;
+    }
+
+  
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(0,255,255,0.6);
+    }
+
+   
+    .card img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        transition: 0.5s;
+    }
+
+    
+    .card:hover img {
+        transform: scale(1.2);
+    }
+
+    
+   .overlay {
+    position: absolute;
+    top: 0;              /* đổi từ bottom -> top */
+    left: 0;
+    width: 100%;
+    height: 100%;        /* bắt buộc phải có */
+
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 20px;
+    box-sizing: border-box;
+
+    display: flex;               /* thêm */
+    flex-direction: column;      /* thêm */
+    justify-content:end;     /* căn giữa dọc */
+    
+    transform: translateY(100%);
+    transition: 0.4s;
+
+    overflow-y: auto; /* chống tràn */
 }
 
-        .container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            padding: 40px;
-        }
+   
+    .card:hover .overlay {
+        transform: translateY(0);
+    }
 
-        .card {
-            position: relative;
-            height: 300px;
-            border-radius: 15px;
-            overflow: hidden;
-            cursor: pointer;
-        }
+    .overlay h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: left;
+}
 
-        .card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .content {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.75);
-            color: white;
-            padding: 15px;
-            opacity: 0;
-            transition: 0.5s;
-            overflow-y: auto;          
-            box-sizing: border-box; 
-            .content h2 {
-            margin-top: 0;
-            font-size: 18px; }
-
-        .content p {
-            font-size: 14px;
-            line-height: 1.5;
-            word-break: break-word;}   
-        }
-
-        .card:hover .content {
-            opacity: 1;
-        }
-
+.overlay p {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: justify; /* cực quan trọng cho đoạn dài */
+}
+    
         .member-box{
             height: 350px;
             width:45%;
             margin:auto;
             padding:30px;
             border-radius:20px;
-            background-color: rgba(255, 255, 255, 0.6);
+            background-color: #2C687B;
 }
         .member-box ul{list-style:none}
 
@@ -94,84 +120,66 @@
             padding: 10px;
 }
 
-    </style>
+</style>
 </head>
+
 <body>
 
-<h1> VỊNH HẠ LONG </h1>
+<h1>KHÁM PHÁ VỊNH HẠ LONG</h1>
 
 <div class="container">
 
-    <!-- Card 1 -->
     <div class="card">
         <img src="images/img1.jpg">
-        <div class="content">
-            <div>
-                <h2>1. Giới thiệu chung về Vịnh Hạ Long</h2>
-                <p>Vịnh Hạ Long là kỳ quan thiên nhiên nổi tiếng của Việt Nam, nằm ở Quảng Ninh, với gần 2.000 đảo đá vôi được hình thành qua hàng triệu năm. Tên gọi “Hạ Long” gắn với truyền thuyết rồng xuống giúp dân chống giặc. Vịnh có địa hình karst độc đáo, nhiều hang động kỳ ảo và hệ sinh thái đa dạng. Nơi đây được UNESCO công nhận là Di sản thiên nhiên thế giới vào năm 1994 và 2000.</p>
-            </div>
+        <div class="overlay">
+            <h2>Giới thiệu chung</h2>
+            <p>Vịnh Hạ Long là kỳ quan thiên nhiên nổi tiếng của Việt Nam, nằm ở Quảng Ninh, với gần 2.000 đảo đá vôi được hình thành qua hàng triệu năm. Tên gọi “Hạ Long” gắn với truyền thuyết rồng xuống giúp dân chống giặc. Vịnh có địa hình karst độc đáo, nhiều hang động kỳ ảo và hệ sinh thái đa dạng. Nơi đây được UNESCO công nhận là Di sản thiên nhiên thế giới vào năm 1994 và 2000.</p>
         </div>
     </div>
 
-    <!-- Card 2 -->
     <div class="card">
         <img src="images/img2.jpg">
-        <div class="content">
-            <div>
-                <h2>2. Cảnh đẹp & các điểm tham quan nổi bật</h2>
-                <p>Vịnh Hạ Long nổi bật với hệ thống hang động kỳ vĩ như Hang Sửng Sốt, Động Thiên Cung và Hang Đầu Gỗ, mỗi nơi mang vẻ đẹp và giá trị riêng. Các điểm tham quan tiêu biểu gồm Hòn Gà Chọi - biểu tượng du lịch, đảo Ti Tốp với góc nhìn toàn cảnh, và đảo Cát Bà đa dạng sinh học. Vẻ đẹp vịnh thay đổi theo thời gian, từ bình minh huyền ảo đến hoàng hôn lãng mạn, tạo nên sức hút đặc biệt.</p>
-            </div>
+        <div class="overlay">
+            <h2>Cảnh đẹp</h2>
+            <p>Vịnh Hạ Long nổi bật với hệ thống hang động kỳ vĩ như Hang Sửng Sốt, Động Thiên Cung và Hang Đầu Gỗ, mỗi nơi mang vẻ đẹp và giá trị riêng. Các điểm tham quan tiêu biểu gồm Hòn Gà Chọi - biểu tượng du lịch, đảo Ti Tốp với góc nhìn toàn cảnh, và đảo Cát Bà đa dạng sinh học. Vẻ đẹp vịnh thay đổi theo thời gian, từ bình minh huyền ảo đến hoàng hôn lãng mạn, tạo nên sức hút đặc biệt.</p>
         </div>
     </div>
 
-    <!-- Card 3 -->
     <div class="card">
         <img src="images/img3.jpg">
-        <div class="content">
-            <div>
-                <h2>3. Du lịch & trải nghiệm tại Vịnh Hạ Long</h2>
-                <p>Du lịch Vịnh Hạ Long mang đến nhiều trải nghiệm hấp dẫn như du thuyền, chèo kayak, tắm biển, câu mực đêm và ngắm vịnh từ trên cao. Bên cạnh đó, du khách còn được thưởng thức ẩm thực đặc sắc với chả mực, hải sản tươi sống và nhiều món ăn đậm hương vị biển, tạo nên hành trình vừa thú vị vừa đáng nhớ.</p>
-            </div>  
+        <div class="overlay">
+            <h2>Du Lịch</h2>
+            <p>Du lịch Vịnh Hạ Long mang đến nhiều trải nghiệm hấp dẫn như du thuyền, chèo kayak, tắm biển, câu mực đêm và ngắm vịnh từ trên cao. Bên cạnh đó, du khách còn được thưởng thức ẩm thực đặc sắc với chả mực, hải sản tươi sống và nhiều món ăn đậm hương vị biển, tạo nên hành trình vừa thú vị vừa đáng nhớ.</p>
         </div>
     </div>
 
-    <!-- Card 4 -->
     <div class="card">
         <img src="images/img5.jpg">
-        <div class="content">
-            <div>
-                <h2>4. Các bãi biển đẹp tại Vịnh Hạ Long</h2>
-                <p>Vịnh Hạ Long có nhiều bãi biển nổi tiếng như bãi Ti Tốp, Bãi Cháy và đảo Cát Bà. Những bãi biển này có cát trắng mịn, nước trong xanh và không gian thoáng đãng, rất thích hợp để tắm biển và nghỉ dưỡng. Đây là điểm đến lý tưởng cho du khách yêu thích biển.</p>
-            </div>
+        <div class="overlay">
+            <h2>Các bãi biển</h2>
+            <p>Vịnh Hạ Long có nhiều bãi biển nổi tiếng như bãi Ti Tốp, Bãi Cháy và đảo Cát Bà. Những bãi biển này có cát trắng mịn, nước trong xanh và không gian thoáng đãng, rất thích hợp để tắm biển và nghỉ dưỡng. Đây là điểm đến lý tưởng cho du khách yêu thích biển.</p>
         </div>
     </div>
 
-    <!-- Card 5 -->
     <div class="card">
         <img src="images/img6.jpg">
-        <div class="content">
-            <div>
-                <h2>5. Hệ sinh thái & đa dạng sinh học</h2>
-                <p>Vịnh Hạ Long sở hữu hệ sinh thái phong phú với rừng ngập mặn, rạn san hô và nhiều loài động thực vật quý hiếm. Đây là môi trường sống quan trọng của nhiều sinh vật biển, góp phần tạo nên giá trị sinh học độc đáo của vịnh.</p>
-            </div>
+        <div class="overlay">
+            <h2>Hệ sinh thái</h2>
+            <p>Vịnh Hạ Long sở hữu hệ sinh thái phong phú với rừng ngập mặn, rạn san hô và nhiều loài động thực vật quý hiếm. Đây là môi trường sống quan trọng của nhiều sinh vật biển, góp phần tạo nên giá trị sinh học độc đáo của vịnh</p>
         </div>
     </div>
 
-    <!-- Card 6 -->
     <div class="card">
         <img src="images/img4.jpg">
-        <div class="content">
-            <div>
-                <h2>6. Ý nghĩa & giá trị của Vịnh Hạ Long</h2>
-                <p>Vịnh Hạ Long là biểu tượng du lịch của Việt Nam, góp phần quan trọng vào kinh tế và thu hút hàng triệu du khách mỗi năm. Đây cũng là niềm tự hào dân tộc, đồng thời cần được bảo tồn để giữ gìn môi trường và hệ sinh thái. Với vẻ đẹp kỳ vĩ và giá trị độc đáo, Vịnh Hạ Long xứng đáng là điểm đến hàng đầu thế giới.</p>
-            </div>
+        <div class="overlay">
+            <h2>Ý nghĩa và giá trị</h2>
+            <p>Vịnh Hạ Long là biểu tượng du lịch của Việt Nam, góp phần quan trọng vào kinh tế và thu hút hàng triệu du khách mỗi năm. Đây cũng là niềm tự hào dân tộc, đồng thời cần được bảo tồn để giữ gìn môi trường và hệ sinh thái. Với vẻ đẹp kỳ vĩ và giá trị độc đáo, Vịnh Hạ Long xứng đáng là điểm đến hàng đầu thế giới.</p>
         </div>
     </div>
 
 </div>
 
-
-    <section> <h2>Thành viên </h2> 
+   <section> <h2>Thành viên </h2> 
   <div class="member-box"> 
     <ul> 
       <li> 
@@ -182,6 +190,5 @@
   </div>
  </section>
 
- 
 </body>
 </html>
